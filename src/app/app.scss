@@ -14,3 +14,35 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+
+$colors: (
+
+    green: #00ff00,
+    red:  #fd4141
+
+  );
+
+
+
+.text-green{
+  color: color($colors, green);
+}
+
+.text-red{
+  color: color($colors,red);
+}
+
+.md-text{
+  font-size:2em;
+}
+
+.card .label p{
+  display: inline;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}

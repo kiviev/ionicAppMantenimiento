@@ -4,43 +4,57 @@ import {HomePage ,
         ListaMantenimientosPage ,
         PerfilUsuarioPage,
         VistaRapidaPage,
+        FluidosPage,
+        NeumaticosPage,
         Pag1Page}     from "../pages.index";
 
 import {TranslateModel}  from "../../model/model.index";
+
 // singleton
 export class PagesUtils{
 
     private static instance:PagesUtils;
     private static allowInstance:Boolean;
-    public pagesData : object;
+    public pagesData : any;
 
     constructor(){
 
         this.pagesData = {
-           'home'  : {
+           home  : {
+                       key : 'home',
                       'page' :  HomePage,
                       'name' :  TranslateModel.trans('pages.home.title'),
                       'desc' :  TranslateModel.trans('pages.home.desc')
                     },
-           'lista_mantenimientos'  : {
+           lista_mantenimientos  : {
+                       key : 'lista_mantenimientos',
                       'page' :  ListaMantenimientosPage,
                       'name' :  TranslateModel.trans('pages.lista_mantenimientos.title'),
                       'desc' :  TranslateModel.trans('pages.lista_mantenimientos.desc')
                     },
-           'perfil_usuario'  : {
+           perfil_usuario  : {
+                       key : 'perfil_usuario',
                       'page' :  PerfilUsuarioPage,
                       'name' :  TranslateModel.trans('pages.perfil_usuario.title'),
                       'desc' :  TranslateModel.trans('pages.perfil_usuario.desc')
                     },
-           'vista_rapida'  : {
+           vista_rapida  : {
+                       key : 'vista_rapida',
                       'page' :  VistaRapidaPage,
                       'name' :  TranslateModel.trans('pages.vista_rapida.title'),
                       'desc' :  TranslateModel.trans('pages.vista_rapida.desc')
                     },
-            'page1' : {
-                      'page' :  Pag1Page,
-                      'name' :  TranslateModel.trans('pages.pag1.title'),
-                      'desc' :  TranslateModel.trans('pages.pag1.desc')
+            fluidos : {
+                        key : 'fluidos',
+                      'page' :  FluidosPage,
+                      'name' :  TranslateModel.trans('pages.fluidos.title'),
+                      'desc' :  TranslateModel.trans('pages.fluidos.desc')
+                    },
+            neumaticos : {
+                        key : 'neumaticos',
+                      'page' :  NeumaticosPage,
+                      'name' :  TranslateModel.trans('pages.neumaticos.title'),
+                      'desc' :  TranslateModel.trans('pages.neumaticos.desc')
                     },
         }
     }

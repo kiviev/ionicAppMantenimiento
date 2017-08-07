@@ -1,21 +1,25 @@
-
 <ion-header>
   <ion-navbar>
-    <ion-title center>
-     {{title}}
 
-    </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-<h1>{{subtile}}</h1>
-{{desc}}
-<button ion-button
-      (click)="pushPag('lista_mantenimientos')" >
-        lista_mantenimientos
-</button>
 
+<ion-content padding>
+  <h1>{{subtile}}</h1>
+  {{desc}}
+
+<!-- añadir evento click para ir a las diferentes páginas habilitadas -->
+  <ion-list *ngFor="let pag of pagesArray">
+
+    <ion-item >
+      <button ion-item no-lines>
+        <ion-icon name="leaf" item-start></ion-icon>
+        <div class="text-center">holita</div>
+      </button>
+    </ion-item>
+
+  </ion-list>
 
 
 </ion-content>

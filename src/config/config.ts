@@ -2,5 +2,6 @@
 
 export const CONFIG = {
   debug: true,
-  lang : 'es'
+  lang : 'es',
+  mantenimientos_habilitados:['fluidos','neumaticos']
 }

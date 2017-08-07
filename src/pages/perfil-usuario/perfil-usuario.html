@@ -1,20 +1,76 @@
 <ion-header>
   <ion-navbar>
-    <ion-title center>
-     {{title}}
 
-    </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-<h1>{{subtile}}</h1>
-{{desc}}
-<button ion-button
-      (click)="pushPag('lista_mantenimientos')" >
-        lista_mantenimientos
-</button>
+<ion-content padding class="perfil-usuario">
 
+  <ion-card >
 
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="{{user.image.getSrc()}}"
+         (click) = editUserImage()
+        >
+      </ion-avatar>
+
+      <ion-row>
+        <ion-col>
+          <button ion-button float-right clear large  (click) ="toogleEdit()">
+            <ion-icon name="settings"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-list>
+
+      <ion-item>
+        <ion-label stacked>Nombre</ion-label>
+        <ion-input [(ngModel)]="user.name" type="text" value="{{user.name}}" [disabled]="edit ? null : '' " ></ion-input>
+      </ion-item>
+       <ion-item>
+        <ion-label stacked>Apellido 1</ion-label>
+        <ion-input [(ngModel)]="user.apellido1" type="text" value="{{user.apellido1}}" [disabled]="edit ? null : '' " ></ion-input>
+      </ion-item>
+       <ion-item>
+        <ion-label stacked>Apellido 2</ion-label>
+        <ion-input [(ngModel)]="user.apellido2" type="text" value="{{user.apellido2}}" [disabled]="edit ? null : '' " ></ion-input>
+      </ion-item>
+       <ion-item>
+        <ion-label stacked>Email</ion-label>
+        <ion-input [(ngModel)]="user.email" type="text" value="{{user.email}}" [disabled]="edit ? null : '' " ></ion-input>
+      </ion-item>
+
+       <ion-item>
+        <ion-label stacked>Password</ion-label>
+        <ion-input [(ngModel)]="user.password" type="password" value="{{user.password}}" [disabled]="edit ? null : '' " ></ion-input>
+      </ion-item>
+
+       <ion-item>
+        <ion-label stacked>Ciudad</ion-label>
+        <ion-input [(ngModel)]="user.city" type="text" value="{{user.city}}" [disabled]="edit ? null : '' " ></ion-input>
+      </ion-item>
+       <ion-item>
+        <ion-label stacked>Dirección</ion-label>
+        <ion-input [(ngModel)]="user.direction" type="text" value="{{user.direction}}" [disabled]="edit ? null : '' " ></ion-input>
+      </ion-item>
+       <ion-item>
+        <ion-label stacked>Comunidad Autónoma</ion-label>
+        <ion-input [(ngModel)]="user.state" type="text" value="{{user.state}}" [disabled]="edit ? null : '' " ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Pais</ion-label>
+        <ion-input [(ngModel)]="user.country" type="text" value="{{user.country}}" [disabled]="edit ? null : '' " ></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+          <button [hidden] = "!edit" ion-button full  (click) ="editarPerfil()">
+            <ion-icon name="send"> Enviar</ion-icon>
+          </button>
+
+  </ion-card>
 
 </ion-content>

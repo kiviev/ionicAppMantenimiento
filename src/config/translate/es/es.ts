@@ -23,16 +23,25 @@ export const ES = {
         desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione quam, error. Ex vero et deserunt similique maiores dolorem est quae illum! Soluta nisi voluptatum, blanditiis ad eveniet, dicta fugiat libero."
       },
       lista_mantenimientos:{
-        title:"lista_mantenimientos titulito",
+        title:"lista mantenimientos",
         desc: "Esta es una descripcion de a lista_mantenimientos"
       },
       perfil_usuario:{
-        title:"perfil_usuariox titulito",
+        title:"perfil usuario",
         desc: "Esta es una descripcion de a perfil_usuariox"
       },
       vista_rapida:{
-        title:"vista_rapida titulito",
+        title:"vista rápida",
         desc: "Esta es una descripcion de a vista_rapida"
+      },
+
+      fluidos:{
+        title:"Fluidos",
+        desc: "Esta es una descripcion de a Fluidos"
+      },
+     neumaticos:{
+        title:"Neumaticos",
+        desc: "Esta es una descripcion de a neumaticos"
       },
 
 

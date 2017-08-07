@@ -4,30 +4,34 @@ import {MediaModel}  from "../model.index";
 export class UserModel {
 
 protected id:number;
+public name:string;
+protected apellido1:string;
+protected apellido2:string;
 protected email:string;
 protected password:string;
 protected image:MediaModel;
-protected name:string;
-protected apellido1:string;
-protected apellido2:string;
 protected direction:string;
 protected city:string;
+protected state:string;
 protected country:string;
 protected created_at:Date;
 protected updated_at:Date;
 
-  constructor(/*id,email,password,name,apellido1,apellido2,direction,city,country,created_at,updated_at*/) {
-      // this.id = id;
-      // this.email = email;
-      // this.name = name;
-      // this.apellido1 = apellido1;
-      // this.apellido2 = apellido2;
-      // this.direction = direction;
-      // this.city = city;
-      // this.country = country;
-      // this.created_at = created_at;
-      // this.updated_at = updated_at;
+  constructor(id,email,password,name,apellido1,apellido2,direction,city,country,state,created_at,updated_at) {
+      this.id = id;
+      this.email = email;
+      this.name = name;
+      this.password = password;
+      this.apellido1 = apellido1;
+      this.apellido2 = apellido2;
+      this.direction = direction;
+      this.city = city;
+      this.country = country;
+      this.state = state;
+      this.created_at = created_at;
+      this.updated_at = updated_at;
     }
+
 
 
   public getFullName(){
@@ -118,6 +122,15 @@ protected updated_at:Date;
   }
 
 
+  public getState(){
+    return this.state;
+  }
+
+  public setState(state){
+    this.state = state ;
+  }
+
+
   public getCreatedAt(){
     return this.created_at;
   }
@@ -134,6 +147,15 @@ protected updated_at:Date;
 
   public setUpdatedAt(updated_at){
     this.updated_at = updated_at ;
+  }
+
+
+  public getImage(){
+    return this.image;
+  }
+
+  public setImage(image){
+    this.image = image ;
   }
 
 

@@ -1,21 +1,11 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title center>
-     {{title}}
-     titulo home
-
-    </ion-title>
+  <ion-navbar color="primary">
+    <ion-title text-center>{{title}}</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-<h1>{{subtile}}</h1>
-{{desc}}
-<button ion-button
-      (click)="pushPag('vista_rapida')" >
-        vista_rapida c
-</button>
-
-
-
-</ion-content>
+<ion-tabs selectedIndex="0">
+      <ion-tab tabIcon="list-box" [root]="tab1" tabBadge="" tabBadgeStyle="danger"></ion-tab>
+      <ion-tab tabIcon="car" [root]="tab2" tabBadge="" tabBadgeStyle="danger"></ion-tab>
+      <ion-tab tabIcon="person" [root]="tab3"></ion-tab>
+    </ion-tabs>

@@ -1,6 +1,7 @@
 
 export class MediaModel{
 
+protected id:number;
 protected name:string;
 protected src:string;
 protected type:string;
@@ -13,6 +14,42 @@ protected updated_at:Date;
 
   }
 
+
+  public getName(){
+    return this.name;
+  }
+
+  public setName(name){
+    this.name = name ;
+  }
+
+
+  public getSrc(){
+    return this.src;
+  }
+
+  public setSrc(src){
+    this.src = src ;
+  }
+
+
+  public getType(){
+    return this.type;
+  }
+
+  public setType(type){
+    this.type = type ;
+  }
+
+
+
+  public getSize(){
+    return this.size;
+  }
+
+  public setSize(size){
+    this.size = size ;
+  }
 
 
   public getCreatedAt(){

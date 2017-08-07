@@ -4,20 +4,22 @@ import {  NavController, NavParams } from 'ionic-angular';
 // import pages
 import {PagesUtils}  from "../../pages/pages.utils/pages.utils";
 
+// import data service
+import {DataService}  from "../../data/dataService";
+
 export class Pages {
 
-
-// public navCtrl;
-// public navParams;
+protected edit:boolean = false;
+protected typePassword:string = "password";
 protected title:string;
 protected subtile:string;
 protected desc:string;
+protected data:any;
 public pages:any;
 public PagesUtilsObject:PagesUtils = PagesUtils.getInstance();
 
   constructor(public navCtrl:NavController,public navParams :NavParams){
-    // this.navParams= NavParams;
-    // this.navCtrl= NavController;
+    this.data = DataService.getData();
     this.pages =  this.PagesUtilsObject.pagesData;
 
     console.log(this);
@@ -37,4 +39,23 @@ public PagesUtilsObject:PagesUtils = PagesUtils.getInstance();
     this.navCtrl.pop();
   }
 
+  protected toogleEdit(){
+    if(this.edit) this.edit = false;
+    else this.edit = true;
+  }
+
+
+  protected chageTypeInput(origin, final){
+    if(origin == "t" && final == "p") this.typePassword  = "password";
+    else if( origin == "p" && final == "t" ) this.typePassword = "text";
+    else this.typePassword  = origin;
+  }
+
+  protected toogleTypePasswordInput(){
+    if(this.typePassword == "password") this.chageTypeInput('p','t');
+    else{
+      this.chageTypeInput('t','p');
+    }
+
+  }
 }
