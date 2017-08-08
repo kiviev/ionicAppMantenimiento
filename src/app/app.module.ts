@@ -13,6 +13,8 @@ import {HomePage ,
         PerfilUsuarioPage,
         FluidosPage,
         NeumaticosPage,
+        CarroceriaPage,
+        MecanicaPage,
         VistaRapidaPage}  from "../pages/pages.index";
 
 // tranlate
@@ -31,6 +33,8 @@ import {ChangeTransPipe}  from "../pipes/pipe.index";
     PerfilUsuarioPage,
     FluidosPage,
     NeumaticosPage,
+    CarroceriaPage,
+    MecanicaPage,
     VistaRapidaPage,
     ChangeTransPipe
   ],
@@ -49,6 +53,8 @@ import {ChangeTransPipe}  from "../pipes/pipe.index";
     PerfilUsuarioPage,
     FluidosPage,
     NeumaticosPage,
+    CarroceriaPage,
+    MecanicaPage,
     VistaRapidaPage
   ],
   providers: [

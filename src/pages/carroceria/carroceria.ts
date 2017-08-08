@@ -6,23 +6,23 @@ import {TranslateModel,Pages,UserModel,MediaModel}  from "../../model/model.inde
 // config
 import {CONFIG}  from "../../config/config";
 
+
 @IonicPage()
 @Component({
-  selector: 'page-neumaticos',
-  templateUrl: 'neumaticos.html',
+  selector: 'page-carroceria',
+  templateUrl: 'carroceria.html',
 })
-export class NeumaticosPage extends Pages{
+export class CarroceriaPage extends Pages{
 
   constructor(public navCtrl: NavController, public navParams: NavParams , public alertCtrl: AlertController) {
     super(navCtrl,navParams , alertCtrl);
-
     this.title = TranslateModel.trans('appName');
-    this.subtitle = this.pages.lista_mantenimientos.name;
-    this.desc = this.pages.lista_mantenimientos.desc;
+    this.subtitle = this.pages.carroceria.name;
+    this.desc = this.pages.carroceria.desc;
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad Neumaticos');
+    console.log('ionViewDidLoad Carroceria');
   }
 
 }

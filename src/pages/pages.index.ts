@@ -5,6 +5,8 @@ export {PerfilUsuarioPage}     from "./perfil-usuario/perfil-usuario";
 export {VistaRapidaPage}     from "./vista-rapida/vista-rapida";
 export {FluidosPage}     from "./fluidos/fluidos";
 export {NeumaticosPage}  from "./neumaticos/neumaticos";
+export {CarroceriaPage}  from "./carroceria/carroceria";
+export {MecanicaPage}  from "./mecanica/mecanica";
 
 
 

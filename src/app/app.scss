@@ -16,15 +16,6 @@
 // automatically applied to the <body> element in the app.
 
 
-$colors: (
-
-    green: #00ff00,
-    red:  #fd4141
-
-  );
-
-
-
 .text-green{
   color: color($colors, green);
 }

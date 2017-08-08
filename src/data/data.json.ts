@@ -51,5 +51,76 @@ export var data={
       updated_at:"2017-08-01 12:15:26"
 
     }
+  },
+  mantenimientos:{
+    0 :{
+      id : 333,
+      type: 1,
+      user: 111,
+      km : 130222,
+      taller : null,
+      img: null,
+      url: null,
+      mantenimiento :{
+        id:333,
+        aceite: true,
+        direccion : true,
+        refrigeracion: true,
+        valvulina:false,
+        filtroAceite : false,
+        filtroCombustible:false,
+        filtroHabitaculo:false,
+        filtroDireccion:false
+      },
+      created_at:"2017-01-03 12:15:26",
+      updated_at:"2017-01-03 12:15:26"
+    },
+    1 :{
+      id : 334,
+      type: 1,
+      user: 111,
+      km : 140369,
+      taller : null,
+      img: null,
+      url: null,
+      mantenimiento :{
+        id:334,
+        aceite: false,
+        direccion : true,
+        refrigeracion: true,
+        valvulina:false,
+        filtroAceite : true,
+        filtroCombustible:true,
+        filtroHabitaculo:true,
+        filtroDireccion:true
+      },
+      created_at:"2017-08-03 12:15:26",
+      updated_at:"2017-08-03 12:15:26"
+    },
+    2 :{
+      id : 335,
+      type: 2,
+      user: 111,
+      km : 12569,
+      taller : null,
+      img: null,
+      url: null,
+      mantenimiento :{
+        id:335,
+        aceite: true,
+        direccion : true,
+        refrigeracion: true,
+        valvulina:false,
+        filtroAceite : true,
+        filtroCombustible:true,
+        filtroHabitaculo:true,
+        filtroDireccion:true
+      },
+      created_at:"2017-08-03 12:15:26",
+      updated_at:"2017-08-03 12:15:26"
+    },
   }
+
+
+
 }

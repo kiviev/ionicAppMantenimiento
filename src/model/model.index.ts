@@ -4,7 +4,7 @@ export {AutoModel}  from "./auto/auto";
 
 // mantenimiento
 export {MantenimientoModel}  from "./mantenimiento/mantenimiento";
-export {LiquidosModel}  from "./mantenimiento/liquidos";
+export {FluidosModel}  from "./mantenimiento/fluidos";
 export {NeumaticosModel}  from "./mantenimiento/neumaticos";
 export {NeumaticoModel}  from "./mantenimiento/neumatico";
 export {PresionModel}  from "./mantenimiento/presion";

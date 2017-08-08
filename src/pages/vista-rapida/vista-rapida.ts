@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams ,AlertController} from 'ionic-angular';
 //pages
-import {TranslateModel,Pages}  from "../../model/model.index";
+import {TranslateModel,Pages,UserModel,MediaModel}  from "../../model/model.index";
 
+// config
+import {CONFIG}  from "../../config/config";
 
 
 @IonicPage()
@@ -13,11 +15,10 @@ import {TranslateModel,Pages}  from "../../model/model.index";
 export class VistaRapidaPage extends Pages{
 
 
-  constructor(public navCtrl:NavController,public navParams :NavParams) {
-    super(navCtrl,navParams);
-
+  constructor(public navCtrl: NavController, public navParams: NavParams , public alertCtrl: AlertController) {
+    super(navCtrl,navParams , alertCtrl);
     this.title = TranslateModel.trans('appName');
-    this.subtile = this.pages.vista_rapida.name;
+    this.subtitle = this.pages.vista_rapida.name;
     this.desc = this.pages.vista_rapida.desc;
 
   }

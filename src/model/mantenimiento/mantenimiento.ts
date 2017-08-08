@@ -1,6 +1,8 @@
 // model
 import {UserModel,MediaModel,TallerModel}  from "../model.index";
 
+
+
 export class MantenimientoModel {
 
 protected id:number;
@@ -15,8 +17,71 @@ protected updated_at:Date;
 
 
 constructor() {
+  this.taller = new TallerModel();
 
   }
+
+
+  public getId(){
+    return this.id;
+  }
+
+  public setId(id){
+    this.id = id ;
+  }
+
+
+  public getType(){
+    return this.type;
+  }
+
+  public setType(type){
+    this.type = type ;
+  }
+
+
+  public getKm(){
+    return this.km;
+  }
+
+  public setKm(km){
+    this.km = km ;
+  }
+
+
+  public getTaller(){
+    return this.taller;
+  }
+
+  public setTaller(taller){
+    this.taller = taller ;
+  }
+
+
+  public getPrecio(){
+    return this.precio;
+  }
+
+  public setPrecio(precio){
+    this.precio = precio ;
+  }
+
+
+  public getMoneda(){
+    return this.moneda;
+  }
+
+  public setMoneda(moneda){
+    this.moneda = moneda ;
+  }
+
+
+
+
+
+
+
+
 
 
 

@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams ,AlertController} from 'ionic-angular';
 //pages
 import {TranslateModel,Pages,UserModel,MediaModel}  from "../../model/model.index";
 
+// config
+import {CONFIG}  from "../../config/config";
 
 
 
@@ -18,12 +20,10 @@ export class PerfilUsuarioPage extends Pages{
 
 
 
+  constructor(public navCtrl: NavController, public navParams: NavParams , public alertCtrl: AlertController) {
+    super(navCtrl,navParams , alertCtrl);
 
 
-  constructor(public navCtrl:NavController,public navParams :NavParams) {
-    super(navCtrl,navParams);
-
-    this.title = TranslateModel.trans('appName');
 
     let userdata = this.data.user;
 

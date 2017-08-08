@@ -1,22 +1,28 @@
 <ion-header>
-  <ion-navbar>
-
+  <ion-navbar color="primary">
+    <ion-title text-center>{{appName}}</ion-title>
   </ion-navbar>
 </ion-header>
-
 
 <ion-content padding>
   <h1>{{subtile}}</h1>
   {{desc}}
+  <ion-list >
 
-<!-- añadir evento click para ir a las diferentes páginas habilitadas -->
-  <ion-list *ngFor="let pag of pagesArray">
+    <ion-item *ngFor="let pag of pagesArray">
+      <div ion-item no-lines  >
+        <ion-icon name="{{pag.icon}}" item-start></ion-icon>
+        <div class="text-center">{{pag.name}}</div>
+        <ion-icon color="green" name="add-circle" item-right
+          (click) = "pushPag(pag.key,{edit: true,
+                                      soloVer : true
+                                        })"
+        ></ion-icon>
+        <ion-icon  name="list-box" item-right
+          (click) = "pushPag(pag.key,{edit: false})"
+        ></ion-icon>
 
-    <ion-item >
-      <button ion-item no-lines>
-        <ion-icon name="leaf" item-start></ion-icon>
-        <div class="text-center">holita</div>
-      </button>
+      </div>
     </ion-item>
 
   </ion-list>

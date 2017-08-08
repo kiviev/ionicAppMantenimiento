@@ -39,9 +39,17 @@ export const ES = {
         title:"Fluidos",
         desc: "Esta es una descripcion de a Fluidos"
       },
-     neumaticos:{
+       neumaticos:{
         title:"Neumaticos",
         desc: "Esta es una descripcion de a neumaticos"
+      },
+       carroceria:{
+        title:"Carrocería",
+        desc: "Esta es una descripcion de a Carrocería"
+      },
+       mecanica:{
+        title:"Mecánica",
+        desc: "Esta es una descripcion de a Mecánica"
       },
 
 

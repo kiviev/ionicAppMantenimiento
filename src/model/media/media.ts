@@ -1,4 +1,8 @@
 
+// // config
+import {CONFIG}  from "../../config/config";
+
+
 export class MediaModel{
 
 protected id:number;
@@ -25,6 +29,7 @@ protected updated_at:Date;
 
 
   public getSrc(){
+    if(!this.src) this.src = CONFIG.img_default;
     return this.src;
   }
 
