@@ -12,7 +12,14 @@
       </ion-item> -->
   <ion-list>
     <div *ngIf="soloVer" class="edit">
-
+      <ion-item  >
+        <ion-avatar item-start>
+          <img src="{{fluidosMantenimiento.getTaller().getImg().getSrc()}} ">
+        </ion-avatar>
+        <h2>Taller: {{fluidosMantenimiento.taller.getNombre() ? taller : "No hay taller"}}</h2>
+        <h3>Km: {{fluidosMantenimiento.km}}</h3>
+        <p>Fecha {{printTime(fluidosMantenimiento.created_at)}}</p>
+      </ion-item>
 
       <ion-item>
         <ion-label>Aceite</ion-label>
@@ -47,12 +54,12 @@
         <ion-toggle  [disabled]="edit ? null : '' "  [(ngModel)]="fluidosMantenimiento.filtroDireccion" color="primary" checked="fluidosMantenimiento.filtroDireccion"></ion-toggle>
       </ion-item>
 
-      <ion-fab *ngIf="!soloVer" right bottom>
+      <ion-fab *ngIf="soloVer" right bottom>
         <button ion-fab color="red"
           (click) ="toogleEdit()">
           <ion-icon name="brush"></ion-icon></button>
       </ion-fab>
-      <ion-fab *ngIf="soloVer" left bottom>
+      <ion-fab *ngIf="soloVer && edit" left bottom>
         <button ion-fab color="green"
           (click) ="storage(fluidosMantenimiento)">
           <ion-icon name="paper-plane"></ion-icon></button>

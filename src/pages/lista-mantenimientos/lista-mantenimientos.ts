@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams ,AlertController} from 'ionic-angular';
+import { IonicPage} from 'ionic-angular';
 //pages
 import {TranslateModel,Pages,UserModel,MediaModel}  from "../../model/model.index";
+
+// dependencias
+import {Injector} from '@angular/core';
 
 // config
 import {CONFIG}  from "../../config/config";
@@ -16,8 +19,10 @@ export class ListaMantenimientosPage extends Pages{
     protected habilitados:Array<string> = CONFIG.mantenimientos_habilitados;
     public pagesArray:Array<object> = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams , public alertCtrl: AlertController) {
-    super(navCtrl,navParams , alertCtrl);
+
+   constructor(public injector:Injector) {
+    super(injector);
+
     this.title = TranslateModel.trans('appName');
     this.subtitle = this.pages.lista_mantenimientos.name;
     this.desc = this.pages.lista_mantenimientos.desc;

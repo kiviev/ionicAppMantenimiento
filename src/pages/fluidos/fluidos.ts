@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams ,AlertController} from 'ionic-angular';
+import { IonicPage} from 'ionic-angular';
 //pages
 import {TranslateModel,Pages,UserModel,MediaModel ,FluidosModel}  from "../../model/model.index";
 
-
+// dependencias
+import {Injector} from '@angular/core';
 
 @IonicPage()
 @Component({
@@ -13,9 +14,11 @@ import {TranslateModel,Pages,UserModel,MediaModel ,FluidosModel}  from "../../mo
 export class FluidosPage extends Pages{
   protected fluidosMantenimiento:FluidosModel;
   protected fluidosMantenimientoAntiguo:FluidosModel;
+  public sqlite;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams , public alertCtrl: AlertController) {
-    super(navCtrl,navParams , alertCtrl);
+   constructor(public injector:Injector) {
+    super(injector);
+
 
     this.title = TranslateModel.trans('appName');
     this.subtitle = this.pages.fluidos.name;
@@ -28,7 +31,10 @@ export class FluidosPage extends Pages{
       let mant = this.navParams.get('mantenimiento');
       let fluidos = mant.mantenimiento;
 
-      this.fluidosMantenimiento.setId(fluidos.id);
+      this.fluidosMantenimiento.setId(mant.id);
+      this.fluidosMantenimiento.setKm(mant.km);
+      this.fluidosMantenimiento.setCreatedAt(mant.created_at);
+      // this.fluidosMantenimiento.setTaller(mant.taller);
       this.fluidosMantenimiento.setAceite(fluidos.aceite);
       this.fluidosMantenimiento.setDireccion(fluidos.direccion);
       this.fluidosMantenimiento.setRefrigeracion(fluidos.refrigeracion);

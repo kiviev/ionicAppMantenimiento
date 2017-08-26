@@ -15,8 +15,16 @@ import {TranslateModel}  from "../../model/model.index";
 // import data service
 import {DataService}  from "../../data/dataService";
 
+// dependencias
+import {Injector} from '@angular/core';
+
 export class Pages {
 
+
+// dependencias
+protected navCtrl:NavController;
+protected navParams:NavParams;
+protected alertCtrl:AlertController;
 
 protected lang:string = CONFIG.lang;
 protected appName:string;
@@ -32,11 +40,16 @@ protected listaMantenimientos:Array<object> = [];
 public pages:any;
 public PagesUtilsObject:PagesUtils = PagesUtils.getInstance();
 
-  constructor(public navCtrl:NavController,public navParams :NavParams , public alertCtrl: AlertController){
+  constructor(public injector:Injector){
+
+    this.navCtrl = this.injector.get(NavController);
+    this.navParams = this.injector.get(NavParams);
+    this.alertCtrl = this.injector.get(AlertController);
+
     this.appName=TranslateModel.trans('appName');
     this.data = DataService.getData();
     this.pages =  this.PagesUtilsObject.pagesData;
-    if(navParams.get('soloVer') == true) this.soloVer = true;
+    if(this.navParams.get('soloVer') == true) this.soloVer = true;
 
   }
    public ionViewDidLoad() {
@@ -84,7 +97,7 @@ public PagesUtilsObject:PagesUtils = PagesUtils.getInstance();
   }
 
   protected printTime(time){
-    return GF.parseDateTime(time,this.lang);
+    return  time ? GF.parseDateTime(time,this.lang) : '';
   }
 
   protected  showConfirm(obj,func) {

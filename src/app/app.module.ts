@@ -4,7 +4,10 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
+import {  NavController, NavParams , AlertController } from 'ionic-angular';
+
 import { MyApp } from './app.component';
+
 
 // import pages
 import {HomePage ,
