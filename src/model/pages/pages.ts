@@ -1,4 +1,5 @@
 import {  NavController, NavParams , AlertController , ToastController } from 'ionic-angular';
+import { Platform } from 'ionic-angular';
 
 // funciones de uso general
 import {GeneralFunctions as GF}  from "../../utils/general.functions";
@@ -14,6 +15,7 @@ import {TranslateModel}  from "../../model/model.index";
 
 // import data service
 import {DataService}  from "../../data/dataService";
+import {Storage as MyStorage}  from "../../services/storage/Storage";
 
 // dependencias
 import {Injector} from '@angular/core';
@@ -26,6 +28,9 @@ protected navCtrl:NavController;
 protected navParams:NavParams;
 protected alertCtrl:AlertController;
 protected toastCtrl:ToastController;
+protected platform : Platform;
+protected inDevice:boolean;
+protected db: MyStorage;
 
 protected lang:string = CONFIG.lang;
 protected appName:string;
@@ -41,13 +46,20 @@ protected listaMantenimientos:Array<object> = [];
 public pages:any;
 public PagesUtilsObject:PagesUtils = PagesUtils.getInstance();
 
+
   constructor(public injector:Injector){
 
     this.navCtrl = this.injector.get(NavController);
     this.navParams = this.injector.get(NavParams);
     this.alertCtrl = this.injector.get(AlertController);
     this.toastCtrl = this.injector.get(ToastController);
+    this.platform = this.injector.get(Platform);
+    this.db = new MyStorage();
 
+    this.inDevice = this.platform.is('cordova');
+  /*  if( !this.platform.is('cordova')){
+      this.presentToast('No está en un dispositivo.  Puede que haya funcionalidades que no pueda utilizar')
+    }*/
     this.appName=TranslateModel.trans('appName');
     this.data = DataService.getData();
     this.pages =  this.PagesUtilsObject.pagesData;

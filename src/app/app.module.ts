@@ -5,7 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import {  NavController, NavParams , AlertController } from 'ionic-angular';
-
+import {Storage}  from "../services/storage/Storage";
 import { MyApp } from './app.component';
 
 
@@ -64,6 +64,7 @@ import {ChangeTransPipe}  from "../pipes/pipe.index";
     StatusBar,
     SplashScreen,
     TranslateModel,
+    Storage,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

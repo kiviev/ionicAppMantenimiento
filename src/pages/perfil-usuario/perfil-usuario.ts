@@ -29,6 +29,12 @@ export class PerfilUsuarioPage extends Pages{
 
 
     let userdata = this.data.user;
+    if (this.inDevice){
+      let userdb = this.db.dbObject.executeSql('SELECT * FROM MT_USERS WHERE ID = 1');
+      console.log('xxxxxxxxxxxxx');
+      console.log(userdb);
+    }
+
 
     this.user = new UserModel(
         userdata.id,userdata.email,userdata.password,userdata.name,userdata.apellido1,userdata.apellido2,userdata.direction,userdata.city,userdata.country,userdata.state,userdata.created_at,userdata.updated_at

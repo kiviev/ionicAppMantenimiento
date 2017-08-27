@@ -4,6 +4,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {Storage}  from "../services/storage/Storage";
 
+// config
+import {CONFIG}  from "../config/config";
+
 
 import { HomePage } from '../pages/pages.index';
 @Component({
@@ -18,10 +21,17 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
-      let storage= new Storage();
-      let db = storage.db;
-      storage.create();
+      if(platform.is('cordova')){
+        platform.ready()
+        .then(() => {
+          let storage = new Storage();
+        })
 
+      }else console.log('No esta en un dispositivo');
+
+
+      // storage.create();
+//
 
 
     });
