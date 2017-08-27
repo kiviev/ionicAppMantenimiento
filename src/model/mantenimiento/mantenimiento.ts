@@ -1,11 +1,12 @@
 // model
-import {UserModel,MediaModel,TallerModel}  from "../model.index";
+import {UserModel,MediaModel,TallerModel , AutoModel}  from "../model.index";
 
 
 
 export class MantenimientoModel {
 
 protected id:number;
+protected auto:AutoModel;
 protected type:number;
 protected user:UserModel;
 protected km:number;
@@ -29,6 +30,15 @@ constructor() {
   public setId(id){
     this.id = id ;
   }
+
+
+ public getAuto(){
+   return this.auto;
+ }
+
+ public setAuto(auto){
+   this.auto = auto ;
+ }
 
 
   public getType(){

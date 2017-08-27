@@ -1,4 +1,4 @@
-import {  NavController, NavParams , AlertController } from 'ionic-angular';
+import {  NavController, NavParams , AlertController , ToastController } from 'ionic-angular';
 
 // funciones de uso general
 import {GeneralFunctions as GF}  from "../../utils/general.functions";
@@ -25,6 +25,7 @@ export class Pages {
 protected navCtrl:NavController;
 protected navParams:NavParams;
 protected alertCtrl:AlertController;
+protected toastCtrl:ToastController;
 
 protected lang:string = CONFIG.lang;
 protected appName:string;
@@ -45,6 +46,7 @@ public PagesUtilsObject:PagesUtils = PagesUtils.getInstance();
     this.navCtrl = this.injector.get(NavController);
     this.navParams = this.injector.get(NavParams);
     this.alertCtrl = this.injector.get(AlertController);
+    this.toastCtrl = this.injector.get(ToastController);
 
     this.appName=TranslateModel.trans('appName');
     this.data = DataService.getData();
@@ -134,6 +136,18 @@ public PagesUtilsObject:PagesUtils = PagesUtils.getInstance();
     },store);
 
   }
+
+
+
+
+  protected  presentToast(msg:string, duration:number = 3000) {
+    let toast = this.toastCtrl.create({
+      message: msg,
+      duration: duration
+    });
+    toast.present();
+  }
+
 
 
 
